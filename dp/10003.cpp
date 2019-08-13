@@ -1,5 +1,4 @@
 /* بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ */
-//codeforces1176D
 #include <bits/stdc++.h>
 using namespace std;
 typedef long long ll;
@@ -15,26 +14,28 @@ ll lcm(ll a, ll b){ return (a*b)/gcd(a, b); }
 ld dist(ll x, ll y, ll a, ll b){ return sqrt((x - a)*(x - a) + (y - b)*(y - b)); }
 void debug(ll* a, ll n) { for ( int k = 0; k < n; k++ ){ cout << a[k] << " ";} cerr << "\n"; }
 ll n, m;
-ld p, q, r, s, t, u;
-
-ld f(ld x) {
-	return p * exp(-x) + q * sin(x) + r * cos(x) + s * tan(x) + x * x * t + u;
+ll a[55];
+ll memo[55][55];
+ll dp(ll l, ll r) {
+	if (memo[l][r] != -1) return memo[l][r];
+	if (r - l == 1) { return memo[l][r] = 0; }
+	ll ans = 1e12;
+	for ( int k = l + 1; k < r; k++ ){
+		ans = min(ans, dp(l, k) + dp(k, r));
+	}
+	return memo[l][r] = ans + a[r] - a[l];
 }
 
 int main(){
 	FASTIO;
-	while (cin >> p) {
-		cin >> q >> r >> s >> t >> u;
-		if (f(0) * f(1) > 0) { cout << "No solution\n"; continue; }
-		ld lo = 0.0, hi = 1.0, mid;
-		ld err = 1, v;
-		while (err > 1e-6) {
-			mid = (lo + hi) / 2;
-			v = f(mid);
-			err = abs(v);
-			if (v > 0) { lo = mid; } else { hi = mid; }
-		}
-		cout << fixed << setprecision(4) << mid << "\n";
+	cin >> m;
+	while (m) {
+		cin >> n;
+		a[0] = 0;
+		for ( int k = 1; k <= n; k++ ){ cin >> a[k]; } a[n + 1] = m;
+		memset(memo, -1, sizeof memo);
+		cout << "The minimum cutting is " << dp(0, n + 1) << ".\n";
+		cin >> m;
 	}
 	return 0;
 }

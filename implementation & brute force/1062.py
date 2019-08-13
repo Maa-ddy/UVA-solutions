@@ -1,4 +1,3 @@
-#codeforces
 gi = lambda : list(map(int,input().strip().split()))
 s = input()
 c = 1

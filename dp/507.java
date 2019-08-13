@@ -1,5 +1,4 @@
 /* بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ */
-//codeforces_1186D_live
 import java.io.*;
 import java.util.*;
 import java.util.regex.Matcher;

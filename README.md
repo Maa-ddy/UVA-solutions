@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 <pre>
->>>>>>> 84bc7b874c28e779de33d524aba643e28b24b1a2
 ==============================================================================|  
 |									      |  
 |		M    M     A	    A     DDD   DDD   Y   Y		      |  
@@ -19,10 +16,6 @@ Note:
 If you want to run any of the files, you can just compile them them and run  
 them like any other source code file, except for the java files. You need to   
 rename the file to "Main.java" to be able to compile it. because the main class  
-for the java files is "Main". They're named as the number of the problem just  
+for the all these java files is "Main". The files are named as the number of the problem just  
 for reference purpose.  
-<<<<<<< HEAD
-=======
 </pre>
- 
->>>>>>> 84bc7b874c28e779de33d524aba643e28b24b1a2
